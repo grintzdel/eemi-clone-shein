@@ -77,7 +77,7 @@ export default function TrendingProducts() {
   return (
     <section className="bg-white px-4 py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex items-center justify-between animate-fade-in-up">
           <div>
             <h2 className="text-3xl font-bold">Tendances du Moment</h2>
             <p className="mt-2 text-gray-600">Articles les plus populaires cette semaine</p>
@@ -89,8 +89,12 @@ export default function TrendingProducts() {
 
         <div className="grid grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative mb-3 aspect-[3/4] overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+            <div
+              key={index}
+              className="group cursor-pointer animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.08}s`, animationFillMode: 'backwards' }}
+            >
+              <div className="relative mb-3 aspect-[3/4] overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${product.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}
                 >
@@ -101,7 +105,7 @@ export default function TrendingProducts() {
                   <span className="rounded bg-red-500 px-2 py-1 text-xs font-bold text-white">-40%</span>
                 </div>
 
-                <button className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
+                <button className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-white opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100 hover:scale-125 active:scale-95">
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -135,8 +139,8 @@ export default function TrendingProducts() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <button className="rounded-full border-2 border-black px-8 py-3 font-semibold transition-all duration-300 hover:bg-black hover:text-white">
+        <div className="mt-12 text-center animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <button className="rounded-full border-2 border-black px-8 py-3 font-semibold transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 active:scale-95">
             Charger plus de produits
           </button>
         </div>

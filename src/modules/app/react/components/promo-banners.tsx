@@ -30,11 +30,12 @@ export default function PromoBanners() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 animate-slide-in-left"
+              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'backwards' }}
             >
               <div className={`aspect-[4/3] bg-gradient-to-br ${banner.color} flex flex-col justify-between p-8`}>
                 {/* Emoji */}
-                <div className="text-7xl transition-transform duration-300 group-hover:scale-110">{banner.emoji}</div>
+                <div className="text-7xl transition-all duration-300 group-hover:scale-125 group-hover:-rotate-12">{banner.emoji}</div>
 
                 {/* Text */}
                 <div className="space-y-1 text-white">
@@ -44,7 +45,7 @@ export default function PromoBanners() {
                 </div>
 
                 {/* Button */}
-                <button className="mt-4 w-fit rounded-full bg-white px-6 py-2 font-semibold text-black transition-colors hover:bg-gray-100">
+                <button className="mt-4 w-fit rounded-full bg-white px-6 py-2 font-semibold text-black transition-all duration-300 hover:bg-gray-100 hover:scale-105 active:scale-95">
                   Découvrir
                 </button>
               </div>

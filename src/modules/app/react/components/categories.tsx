@@ -13,16 +13,20 @@ export default function Categories() {
   return (
     <section className="bg-white px-4 py-12">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 text-center text-3xl font-bold">Acheter par Catégorie</h2>
+        <h2 className="mb-8 text-center text-3xl font-bold animate-fade-in-up">Acheter par Catégorie</h2>
 
         <div className="grid grid-cols-4 gap-6">
           {categories.map((category, index) => (
-            <div key={index} className="group cursor-pointer">
+            <div
+              key={index}
+              className="group cursor-pointer animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'backwards' }}
+            >
               <div
                 className={`relative aspect-square rounded-2xl bg-gradient-to-br ${category.color} transform overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-7xl opacity-90 transition-transform duration-300 group-hover:scale-110">
+                  <span className="text-7xl opacity-90 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     {category.icon}
                   </span>
                 </div>

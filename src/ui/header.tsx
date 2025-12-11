@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-white shadow-sm animate-fade-in-down backdrop-blur-sm">
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold tracking-tight">SHEIN</h1>
@@ -30,7 +30,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center space-x-6">
-          <button className="relative">
+          <button className="relative transition-transform duration-200 hover:scale-110 active:scale-95">
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -41,7 +41,7 @@ export default function Header() {
             </svg>
           </button>
 
-          <button className="relative">
+          <button className="relative transition-transform duration-200 hover:scale-110 active:scale-95">
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -50,12 +50,12 @@ export default function Header() {
                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
               />
             </svg>
-            <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+            <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white animate-pulse-subtle">
               0
             </span>
           </button>
 
-          <button>
+          <button className="transition-transform duration-200 hover:scale-110 active:scale-95">
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
